@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import Router from 'next/router';
 import makeSelect{{properCase name}} from './selectors';
-import reducer from './reducer';
+import {{ camelCase name }}Reducer from './reducer';
 import saga from './saga';
 import Config from '~/config';
 import { urls } from '~/utils';
@@ -13,34 +12,31 @@ import styled from './{{properCase name}}.style';
 
 @withI18next()
 class {{ properCase name }} extends React.Component {
-  render() {
-    useInjectReducer({ key: '{{ camelCase name }}', reducer });
-    useInjectSaga({ key: '{{ camelCase name }}', saga });
-
-    return (
-      <div>
-        <style jsx>{styled}</style>
-      </div>
-    )
-  }
+render() {
+return (
+<div>
+  <style jsx>
+    {
+      styled
+    }
+  </style>
+</div>
+)
+}
 }
 
-{{ properCase name }}.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-};
-
 const mapStateToProps = createStructuredSelector({
-  {{ camelCase name }}: makeSelect{{properCase name}}(),
+{{ camelCase name }}: makeSelect{{properCase name}}(),
 });
 
 function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-  };
+return {
+dispatch,
+};
 }
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
 export default connect(
-  withConnect,
+withConnect,
 )({{ properCase name }});

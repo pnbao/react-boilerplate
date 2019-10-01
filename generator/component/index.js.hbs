@@ -1,29 +1,26 @@
 import React from 'react';
 import Config from '~/config';
 import withI18next from '~/../hocs/_withI18next';
-import PropTypes from 'prop-types';
 import styled from './{{properCase name}}.style';
 
 @withI18next()
 class {{ properCase name }} extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { };
-  }
-
-  render() {
-    return (
-      <div>
-        <style jsx>{styled}</style>
-      </div>
-    )
-  }
+constructor(props) {
+super(props);
+this.state = { };
 }
 
-
-
-{{ properCase name }}.propTypes = {};
-
-{{ properCase name }}.defaultProps = {};
+render() {
+return (
+<div>
+  <style jsx>
+    {
+      styled
+    }
+  </style>
+</div>
+)
+}
+}
 
 export default {{ properCase name }};

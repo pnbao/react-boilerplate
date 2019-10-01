@@ -2,29 +2,26 @@
  * Container Generator
  */
 
-const componentExists = require('../utils/componentExists');
+const componentExists = require('../utils/containerExists');
 
 module.exports = {
-  description: 'Add a container component',
+  description: 'Add a container',
   prompts: [
     {
       type: 'input',
       name: 'name',
       message: 'Container Name?',
       default: 'Form',
-      validate: value => {
+      validate: (value) => {
         if (/.+/.test(value)) {
-          return componentExists(value)
-            ? 'A component or container with this name already exists'
-            : true;
+          return componentExists(value) ? 'A container with this name already exists' : true;
         }
 
         return 'The name is required';
       },
-    }
+    },
   ],
-  actions: data => {
-    // Generate index.js and index.test.js
+  actions: (data) => {
     const actions = [
       {
         type: 'add',
@@ -71,7 +68,8 @@ module.exports = {
       {
         type: 'prettify',
         path: '/containers/',
-      }];
+      },
+    ];
 
     return actions;
   },

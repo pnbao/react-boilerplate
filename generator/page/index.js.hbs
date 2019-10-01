@@ -1,0 +1,23 @@
+import React from 'react';
+import Head from 'next/head';
+import {{properCase name}}Page from '~/containers/{{properCase name}}Page';
+import { } from '~/containers/{{properCase name}}Page/actions';
+import Layout from '~/containers/Layout';
+import defaultPage from '../hocs/defaultPage';
+import Config from '~/config';
+
+class {{properCase name}} extends React.Component {
+render() {
+return (
+<Layout>
+
+  <Head>
+    <title>{ }</title>
+  </Head>
+  <{{properCase name}}Page />
+</Layout>
+);
+}
+}
+
+export default defaultPage(['common', '{{dashCase name}}'])({{properCase name}});

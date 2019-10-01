@@ -2,10 +2,6 @@
  * Component Generator
  */
 
-/* eslint strict: ["off"] */
-
-'use strict';
-
 const componentExists = require('../utils/componentExists');
 
 module.exports = {
@@ -16,19 +12,16 @@ module.exports = {
       name: 'name',
       message: 'Component Name?',
       default: 'Button',
-      validate: value => {
+      validate: (value) => {
         if (/.+/.test(value)) {
-          return componentExists(value)
-            ? 'A component or container with this name already exists'
-            : true;
+          return componentExists(value) ? 'A component with this name already exists' : true;
         }
 
         return 'The name is required';
       },
-    }
+    },
   ],
-  actions: data => {
-    // Generate index.js and index.test.js
+  actions: (data) => {
     const actions = [
       {
         type: 'add',
@@ -45,7 +38,8 @@ module.exports = {
       {
         type: 'prettify',
         path: '/components/',
-      }]
+      },
+    ];
     return actions;
   },
 };

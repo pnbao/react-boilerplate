@@ -1,22 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import Router from "next/router";
-import makeSelectM from "./selectors";
-import reducer from "./reducer";
+import makeSelectDemoContainer from "./selectors";
+import demoContainerReducer from "./reducer";
 import saga from "./saga";
 import Config from "~/config";
 import { urls } from "~/utils";
 import withI18next from "~/../hocs/_withI18next";
-import styled from "./M.style";
+import styled from "./DemoContainer.style";
 
 @withI18next()
-class M extends React.Component {
+class DemoContainer extends React.Component {
   render() {
-    useInjectReducer({ key: "m", reducer });
-    useInjectSaga({ key: "m", saga });
-
     return (
       <div>
         <style jsx>{styled}</style>
@@ -25,12 +21,8 @@ class M extends React.Component {
   }
 }
 
-M.propTypes = {
-  dispatch: PropTypes.func.isRequired
-};
-
 const mapStateToProps = createStructuredSelector({
-  m: makeSelectM()
+  demoContainer: makeSelectDemoContainer()
 });
 
 function mapDispatchToProps(dispatch) {
@@ -44,4 +36,4 @@ const withConnect = connect(
   mapDispatchToProps
 );
 
-export default connect(withConnect)(M);
+export default connect(withConnect)(DemoContainer);

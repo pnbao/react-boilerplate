@@ -3,7 +3,7 @@ import { DEFAULT_ACTION } from "./constants";
 
 export const initialState = {};
 
-function bnmReducer(state = initialState, action) {
+function demoContainerReducer(state = initialState, action) {
   switch (action.type) {
     case DEFAULT_ACTION:
       break;
@@ -12,4 +12,4 @@ function bnmReducer(state = initialState, action) {
   }
 }
 
-export default bnmReducer;
+export default demoContainerReducer;

@@ -1,6 +1,6 @@
 {
   "name": "ac-boilerplate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "generate": "plop --plopfile generator/index.js",
     "prettify": "prettier --write"

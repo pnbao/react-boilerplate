@@ -9,6 +9,6 @@ function* functionName() {
   // See example in containers/HomePage/saga.js
 }
 
-export default function* gggSaga() {
+export default function* demoContainerSaga() {
   // See example in containers/HomePage/saga.js
 }
